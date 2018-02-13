@@ -21,7 +21,7 @@ public class ImageAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return res.length;
+        return Integer.MAX_VALUE;
     }
 
     @Override
@@ -37,8 +37,8 @@ public class ImageAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
         ImageView imageView = new ImageView(context);
-        imageView.setBackgroundResource(res[position]);
-        imageView.setLayoutParams(new Gallery.LayoutParams(400, 300));
+        imageView.setBackgroundResource(res[position % res.length]);
+        imageView.setLayoutParams(new Gallery.LayoutParams(500, 288));
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         return imageView;
     }
