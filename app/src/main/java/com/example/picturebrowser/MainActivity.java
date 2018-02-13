@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.item1, R.drawable.item2, R.drawable.item3, R.drawable.item4,
             R.drawable.item5, R.drawable.item6, R.drawable.item7, R.drawable.item8,
             R.drawable.item9, R.drawable.item10, R.drawable.item11, R.drawable.item12};
-
+    private ImageAdapter adapter;
     private Gallery gallery;
 
     @Override
@@ -20,5 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         gallery = (Gallery) findViewById(R.id.gallery);
+        adapter = new ImageAdapter(res, this);
+        gallery.setAdapter(adapter);
     }
 }
